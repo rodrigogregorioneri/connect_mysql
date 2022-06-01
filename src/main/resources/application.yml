@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    database: mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: MySql2019!
+    url: jdbc:mysql://localhost:3306/testedb?createDatabaseIfNotExist=true
+    connectionTimeout: 7000
+    idleTimeout: 10000
+    maxLifetime: 30000
+
+cloud:
+  aws:
+    region.auto: false
+    region.static: sa-east-1
+
+
+# This section allows you to see metrics when launching the service using http://127.0.0.1:8080/monitoring/metrics
+management:
+  endpoints.web:
+    base-path: /monitoring
+    exposure.include: "*"
+  endpoint:
+    health:
+      show-details: always
